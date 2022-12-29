@@ -118,7 +118,7 @@ nav p {
 	text-align:center;
 }
 #click i {
-	font-size:2.5rem; color:white; display:block;
+	font-size:2.5rem; color:black; display:block;
 	animation:upDown 1s infinite;
 }
 @keyframes upDown {
@@ -126,7 +126,7 @@ nav p {
 	to 		{transform:translateY(0pt);   opacity:1;}
 }
 
-#click a {color:white;}
+#click a {color:black;}
 
 
 /*** 공통: About / Portfolio / Event / Contant */
@@ -141,28 +141,29 @@ nav p {
 
 /*About(자기소개)*/
 #about { 
-	background:#a4a4a4;
+	background:#73777B;
 }
 #about img {
-	width:220pt; margin:auto;
+	width:400pt; margin:auto;
 }
 #about> p {
 	max-width:200pt; margin:auto; text-align:center;
-	padding-top:10px;
+	padding-top:10px; 
 }
 #about mark {
-	background:#ccc; font-size:0.8rem;
+	background:#eee; font-size:0.8rem; opacity:0.8;
 }
 #about span {
-	transform:translateX(-15px); display:inline-block;
+	transform:translateX(-0px); display:inline-block; font-weight:bold;  font-size:1.1rem; color:white;
 }
 /*profile / Experiences & Education / skill*/
 #about> div {	
 	max-width:850pt; margin:auto; display:flex;
 }
 #about section	{ }
-#about h3 		{padding:50pt 0  10pt 0;}
-#about p 		{font-size:0.9rem; font-weight:500; color:black;}
+#about h3 		{padding:50pt 0  10pt 0; color:#F1EEE9; font-weight:900;}
+#about h2 {color:#f1eee9;}
+#about p 		{font-size:0.9rem; font-weight:500; color:#F1EEE9;}
 
 /*profile*/
 #about section:nth-child(1){
@@ -187,7 +188,7 @@ nav p {
 	background:#eee; height:10px; border-radius:5px;
 }
 #skill ::-webkit-progress-value {
-	background:#c3946a; border-radius:5px;
+	background:#EC994B; border-radius:5px;
 }
 
 
