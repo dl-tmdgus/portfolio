@@ -35,36 +35,56 @@ $(document).ready(function(){
 	}
 	type();	
 	
-	
+	////////////////////////////
+	//상단 메뉴 호버 활성화 유지
+	$("#menu a").click(function(){
+		$(this).addClass('act').siblings().removeClass('act');
+	});
 	
 	//콘텐츠의 top값을 절대값으로 얻어온다. /상대값은 position().top
 	//절대값은 기준이 윈도우 / 상대값은 기준이 부모
+	const homeTop = $("body").offset().top;
 	const aboutTop = $("#about").offset().top;
 	const port1Top = $("#port1").offset().top - 400;
 	const port2Top = $("#port2").offset().top - 400;
 	const port3Top = $("#port3").offset().top - 400;
+	const eventTop = $("#event").offset().top - 400;
+	const contactTop=$("#contact").offset().top - 200;
 	
 	let st = 0;
+	let pos = 0;
 	//스크롤바를 내렸을때의 효과 (스크롤이벤트 감지!)
 	$(window).scroll(function(){
 		st = $(window).scrollTop();
-		//console.log(st);
-		if( st>= aboutTop ){
+		//console.log(st);		
+		if(st>= homeTop && st < aboutTop){
+			pos = 0;
+		}
+		if( st>= aboutTop && st<port1Top){
 			//About에서 오른쪽 "skill" bar 애니메이션
-			$("#photo progress").animate({value : 80});
-			$("#html progress").delay(100).animate({value : 70});
-			$("#jquery progress").delay(200).animate({value : 60});
-			$("#oven progress").delay(300).animate({value : 80});			
+			$("#photo progress").animate({value : 90});
+			$("#html progress").delay(100).animate({value : 80});
+			$("#jquery progress").delay(200).animate({value : 70});
+			$("#oven progress").delay(300).animate({value : 80});
+			pos = 1;
 		}
 		if( st>= port1Top ){
 			$("#port1").addClass("act");
+			pos = 2;
 		}
 		if( st>= port2Top ){
-			$("#port2").addClass("act");
+			$("#port2").addClass("act");			
 		}
 		if( st>= port3Top ){
-			$("#port3").addClass("act");
+			$("#port3").addClass("act");					
 		}
+		if( st>= eventTop && st<contactTop ){
+			pos = 3;
+		}
+		if( st>= contactTop ){
+			pos = 4;
+		}
+		$("#menu a").eq(pos).addClass('act').siblings().removeClass('act');
 	});
 	
 	//이벤트이미지를 클릭하면 큰이미지가 나타난다
