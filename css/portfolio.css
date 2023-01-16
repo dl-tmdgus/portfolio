@@ -29,15 +29,15 @@ nav> div {
 }
 nav p {
 	color:white; font-size:1.2rem;
-	flex:1;
+	flex:1; transform:translateY(-7px);
 }
 #menu {}
 #menu a {
 	color:white; margin-left:20pt;
-	text-shadow:0 0 10px black; display:inline-block;
+	text-shadow:0 0 10px black; display:inline-block; transform:translateY(-7px);
 }
 #menu a:hover, #menu a.act {
-	color:#fff600;  transform:scale(1.1) translateY(-1px);
+	color:#fff600;  transform:scale(1.1) translateY(-8px);
 }
 /*헤더(배경이미지)*/
 #top {
@@ -253,7 +253,7 @@ nav p {
 
 /*세번째 포폴*/
 #port3 img {
-	transform:translateY(-40pt); width:45%;
+	transform:translate(100px, -50pt); width:45%;
 }
 #port3 div.left  {transform:scale(0); transition:2s;}
 #port3 div.right {transform:scale(0); transition:2s;}
